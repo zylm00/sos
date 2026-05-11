@@ -455,9 +455,6 @@ class _DesktopHomePageState extends State<DesktopHomePage>
       }
     }
 
-  Widget buildHelpCards(String updateUrl) {
-    return Container();
-  }
   Widget buildInstallCard(String title, String content, String btnText,
       GestureTapCallback onPressed,
       {double marginTop = 20.0,
