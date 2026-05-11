@@ -29,9 +29,6 @@ jobs:
           git clone https://github.com/rustdesk/hbb_common.git libs/hbb_common
           rm -rf libs/hbb_common/.git
 
-          # 把你的 config.rs 覆盖进去
-          cp patch/hbb_common_config.rs libs/hbb_common/src/config.rs
-
           # 提交
           git add .
           git commit -m "localize hbb_common as plain folder"
