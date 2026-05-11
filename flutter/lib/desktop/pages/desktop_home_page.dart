@@ -454,7 +454,10 @@ class _DesktopHomePageState extends State<DesktopHomePage>
         );
       }
     }
-
+   
+    return const SizedBox();
+  }  
+  
   Widget buildInstallCard(String title, String content, String btnText,
       GestureTapCallback onPressed,
       {double marginTop = 20.0,
