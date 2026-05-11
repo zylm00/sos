@@ -687,9 +687,9 @@ class _DesktopTabState extends State<DesktopTab>
           tabController: controller,
           invisibleTabKeys: invisibleTabKeys,
           tail: tail,
-          showMinimize: showMinimize,
-          showMaximize: showMaximize,
-          showClose: showClose,
+          showMinimize: true,
+          showMaximize: false,
+          showClose: true,
           onClose: onWindowCloseButton,
           labelGetter: labelGetter,
         ).paddingOnly(left: 10)
