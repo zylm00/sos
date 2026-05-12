@@ -423,25 +423,42 @@ class _DesktopHomePageState extends State<DesktopHomePage>
 
     if (isWindows && !bind.isDisableInstallation()) {
       if (!bind.mainIsInstalled()) {
-        return Padding(
-          padding: const EdgeInsets.only(top: 18, bottom: 8),
-          child: Center(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF0C6AF6),
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 34,
-                  vertical: 12,
+        return Column(
+          children: [
+            Container(
+              height: 44,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color(0xFF0583EA),
+                    Color(0xFF0697EA),
+                  ],
                 ),
               ),
-              onPressed: () async {
-                await rustDeskWinManager.closeAllSubWindows();
-                bind.mainGotoInstall();
-              },
-              child: Text(translate("Install")),
             ),
-          ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10, bottom: 8),
+              child: Center(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Color(0xFF0C6AF6),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 34,
+                      vertical: 12,
+                    ),
+                  ),
+                  onPressed: () async {
+                    await rustDeskWinManager.closeAllSubWindows();
+                    bind.mainGotoInstall();
+                  },
+                  child: Text(translate("Install")),
+                ),
+              ),
+            ),
+          ],
         );
       }
     }
