@@ -423,24 +423,15 @@ class _DesktopHomePageState extends State<DesktopHomePage>
 
     if (isWindows && !bind.isDisableInstallation()) {
       if (!bind.mainIsInstalled()) {
-        return Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color(0xFF0583EA),
-                Color(0xFF0697EA),
-              ],
-            ),
-          ),
+        return Padding(
+          padding: const EdgeInsets.only(top: 18, bottom: 8),
           child: Center(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: Color(0xFF0C6AF6),
+                backgroundColor: Color(0xFF0C6AF6),
+                foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 30,
+                  horizontal: 34,
                   vertical: 12,
                 ),
               ),
@@ -448,15 +439,15 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                 await rustDeskWinManager.closeAllSubWindows();
                 bind.mainGotoInstall();
               },
-              child: const Text("Install"),
+              child: Text(translate("Install")),
             ),
           ),
         );
       }
     }
-   
+
     return const SizedBox();
-  }  
+  }
   
   Widget buildInstallCard(String title, String content, String btnText,
       GestureTapCallback onPressed,
