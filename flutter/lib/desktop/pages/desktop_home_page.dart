@@ -398,16 +398,6 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     if (isWindows && !bind.isDisableInstallation()) {
       if (!bind.mainIsInstalled()) {
         return Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color(0xFF0583EA),
-                Color(0xFF0697EA),
-              ],
-            ),
-          ),
           child: Center(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
