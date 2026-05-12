@@ -24,6 +24,12 @@ jobs:
               extra-build-args: "",
             }
     steps:
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/share/boost
+          
       - name: Checkout source code
         uses: actions/checkout@v4
         with:
